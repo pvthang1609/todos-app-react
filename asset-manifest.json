@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/todos-app-react/static/css/main.0208d68b.chunk.css",
+    "main.js": "/todos-app-react/static/js/main.196cdd95.chunk.js",
+    "main.js.map": "/todos-app-react/static/js/main.196cdd95.chunk.js.map",
+    "runtime-main.js": "/todos-app-react/static/js/runtime-main.53703320.js",
+    "runtime-main.js.map": "/todos-app-react/static/js/runtime-main.53703320.js.map",
+    "static/js/2.f5c65f3e.chunk.js": "/todos-app-react/static/js/2.f5c65f3e.chunk.js",
+    "static/js/2.f5c65f3e.chunk.js.map": "/todos-app-react/static/js/2.f5c65f3e.chunk.js.map",
+    "index.html": "/todos-app-react/index.html",
+    "precache-manifest.ccf93044816bdd71f2adb413dc29e5bc.js": "/todos-app-react/precache-manifest.ccf93044816bdd71f2adb413dc29e5bc.js",
+    "service-worker.js": "/todos-app-react/service-worker.js",
+    "static/css/main.0208d68b.chunk.css.map": "/todos-app-react/static/css/main.0208d68b.chunk.css.map",
+    "static/js/2.f5c65f3e.chunk.js.LICENSE.txt": "/todos-app-react/static/js/2.f5c65f3e.chunk.js.LICENSE.txt",
+    "static/media/Clear.svg": "/todos-app-react/static/media/Clear.918ca7d7.svg",
+    "static/media/Tick-all.svg": "/todos-app-react/static/media/Tick-all.57a87fdb.svg",
+    "static/media/Tick.svg": "/todos-app-react/static/media/Tick.3a8a773e.svg",
+    "static/media/Un-Tick.svg": "/todos-app-react/static/media/Un-Tick.5d122731.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53703320.js",
+    "static/js/2.f5c65f3e.chunk.js",
+    "static/css/main.0208d68b.chunk.css",
+    "static/js/main.196cdd95.chunk.js"
+  ]
+}
