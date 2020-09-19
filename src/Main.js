@@ -9,19 +9,22 @@ class Main extends Component {
     super();
     this.state = {
       todos: [
-        // { title: "learning advance Javascript", isDone: false },
-        // { title: "learning react", isDone: false },
-        // { title: "learning react-native", isDone: false },
+        { title: "learning advance Javascript",isEdit: false, isDone: false },
+        { title: "learning react", isEdit: false, isDone: false },
+        { title: "learning react-native", isEdit: false, isDone: false },
       ],
       display: "all", //3 trang thai: all- active- complete
     };
     this.inputElement = React.createRef();      // create reference to varible inputElement
+    this.indexG =0;
     
     this.numTodoNotDone = 0;
     this.statusItem = this.statusItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.modeDisplay = this.modeDisplay.bind(this);
     this.filterTodos = this.filterTodos.bind(this);
+    this.editTodo = this.editTodo.bind(this);
+    this.handleEdit =this.handleEdit.bind(this)
   }
   componentDidMount() {           // component was mounted then run line code
     this.inputElement.current.focus()   
@@ -49,6 +52,17 @@ class Main extends Component {
       todos: [...todos.slice(0, index), ...todos.slice(index + 1)],
       newTodo: "",
     });
+  }
+  editTodo(todo) {
+    const isEdit = todo.isEdit;
+    const { todos } = this.state;
+    let index = this.state.todos.indexOf(todo);
+    this.indexG = index;
+    let newState = todos.slice(0)
+    newState[index].isEdit = !isEdit
+    this.setState( {
+      todos: newState
+    })
   }
   handleChange(event) {
     if (event.keyCode === 13) {
@@ -100,6 +114,18 @@ class Main extends Component {
       }
     )
   }
+  handleEdit(event) {
+    if(event.keyCode === 13) {
+      let newState = this.state.todos.slice(0);
+      newState[this.indexG].title = event.target.value;
+      newState[this.indexG].isEdit = !this.state.todos[this.indexG].isEdit
+      this.setState(
+        {
+          todos: newState
+        }
+      )
+    }
+  }
   render() {
     this.statusItem();
     return (
@@ -127,6 +153,8 @@ class Main extends Component {
                 onclick_clear={() => this.onItemClickClear(todo)}
                 key={index}
                 todo={todo}
+                ondoubleclick={() => this.editTodo(todo)}
+                onkeyup={this.handleEdit}
               />
             );
           }) // map create new arr, for each is not

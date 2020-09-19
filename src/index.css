@@ -156,3 +156,25 @@ code {
 .statusNotthing-display {
   display: block;
 }
+.input-edit {
+  margin: 6px 10px;
+  border: none;
+  width: 84%;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 13px;
+  background-color: transparent;
+  outline: none;
+  display: none;
+  color: #B22222;
+  font-size: 18px;
+}
+.input-edit::placeholder {
+  font-size: 16px;
+}
+.input-edit-active {
+  display: block;
+}
+.p-unactive {
+  display: none;
+}
