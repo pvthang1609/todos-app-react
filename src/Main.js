@@ -9,9 +9,9 @@ class Main extends Component {
     super();
     this.state = {
       todos: [
-        { title: "learning advance Javascript",isEdit: false, isDone: false },
-        { title: "learning react", isEdit: false, isDone: false },
-        { title: "learning react-native", isEdit: false, isDone: false },
+        // { title: "learning advance Javascript",isEdit: false, isDone: false },
+        // { title: "learning react", isEdit: false, isDone: false },
+        // { title: "learning react-native", isEdit: false, isDone: false },
       ],
       display: "all", //3 trang thai: all- active- complete
     };
@@ -57,12 +57,19 @@ class Main extends Component {
     const isEdit = todo.isEdit;
     const { todos } = this.state;
     let index = this.state.todos.indexOf(todo);
-    this.indexG = index;
-    let newState = todos.slice(0)
-    newState[index].isEdit = !isEdit
-    this.setState( {
-      todos: newState
-    })
+    let sum = null;
+    todos.forEach(todo => sum+= todo.isEdit)
+    if (sum === 0) {
+      this.indexG = index;
+      let newState = todos.slice(0)
+      newState[index].isEdit = !isEdit
+      this.setState( {
+        todos: newState
+      })
+    }
+    else {
+      return;
+    }
   }
   handleChange(event) {
     if (event.keyCode === 13) {
@@ -124,6 +131,7 @@ class Main extends Component {
           todos: newState
         }
       )
+      event.target.value='';
     }
   }
   render() {
