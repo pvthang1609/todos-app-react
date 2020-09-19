@@ -9,17 +9,22 @@ class Main extends Component {
     super();
     this.state = {
       todos: [
-        { title: "learning advance Javascript", isDone: false },
-        { title: "learning react", isDone: false },
-        { title: "learning react-native", isDone: false },
+        // { title: "learning advance Javascript", isDone: false },
+        // { title: "learning react", isDone: false },
+        // { title: "learning react-native", isDone: false },
       ],
       display: "all", //3 trang thai: all- active- complete
     };
+    this.inputElement = React.createRef();      // create reference to varible inputElement
+    
     this.numTodoNotDone = 0;
     this.statusItem = this.statusItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.modeDisplay = this.modeDisplay.bind(this);
     this.filterTodos = this.filterTodos.bind(this);
+  }
+  componentDidMount() {           // component was mounted then run line code
+    this.inputElement.current.focus()   
   }
   onItemClickTick(todo) {
     const isDone = todo.isDone;
@@ -126,11 +131,13 @@ class Main extends Component {
             );
           }) // map create new arr, for each is not
         }
+        <p className={classnames('statusNotthing', {'statusNotthing-display': this.state.todos.length === 0})}>Nothing todo, create now..</p>
         <input
           type="text"
           className="input"
           placeholder="Create new todo.."
           onKeyUp={this.handleChange}
+          ref={this.inputElement}
         ></input>
         <div className="block-button">
           <div className="status">{`${this.numTodoNotDone} item left`}</div>
