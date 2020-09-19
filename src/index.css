@@ -47,11 +47,13 @@ code {
   cursor: pointer;
 }
 .block div {
-  width: 100%;
+  width: 84%;
 }
 .block div p {
   margin: 8px 0 8px 10px;
   transition: all 0.3s;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .block div p::first-letter {
   text-transform: uppercase;
